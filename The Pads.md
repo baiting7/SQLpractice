@@ -26,3 +26,8 @@ FROM OCCUPATIONS
 GROUP BY Occupation 
 ORDER BY COUNT(Occupation), Occupation;
 ```
+### Notes
+#### `CONCAT` is used to concat columns and string
+#### `LEFT(string, number_of_chars)` 
+#### `SUBSTRING(string, start, length)`
+#### pay attention to spaces
