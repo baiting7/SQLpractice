@@ -18,6 +18,12 @@ The distinct keyword is there to deal with duplicate salaries in the table. In o
 The generic solution works in all database including Oracle, MySQL, SQL SERVER and PostgreSQL.
 ### Cons 
 Slow, because the inner query will run for every row processed by the outer query.
+### A simple way to find the second highest salary
+```
+select max(salary) as SecondHighestSalary
+from Employee
+where salary< (select max(salary) from Employee)
+```
 
 ## 2. Using Top Keyword in SQL Server
 You can use the TOP keyword to find the Nth highest salary in SQL SERVER. This is also faster than the previous solution because here we are calculating Nth maximum salary without a subquery.
