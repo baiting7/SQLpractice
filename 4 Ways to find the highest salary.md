@@ -1,4 +1,4 @@
-# 4 Ways to find the highest salary
+# 4 Ways to find the nth highest salary
 ## Question
 https://leetcode.com/problems/nth-highest-salary/
 ## 1. Using correlated subquery
