@@ -16,7 +16,8 @@ and B.event_date=date_add(A.event_date, interval 1 day)
 where A.rno=1  
 group by A.event_date
 ```
-Notice use ```and``` in ```left join dataset_app_installs as B on A.player_id=B.player_id and B.event_date=date_add(A.event_date, interval 1 day)```.
+Notice use ```and``` in ```left join dataset_app_installs as B on A.player_id=B.player_id and B.event_date=date_add(A.event_date, interval 1 day)```.  
+Use palyer_id in different tables by ```Left Join``` to calculate different counts.
 ### Solution2: use ```case when...then...```
 ```
 with res as (
