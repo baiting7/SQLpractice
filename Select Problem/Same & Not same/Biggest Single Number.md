@@ -3,7 +3,7 @@
 https://leetcode.com/problems/biggest-single-number/
 ### Solution
 ```
-select nullif(max(num), null) as num
+select ifnull(max(num), null) as num
 from (
     select num 
     from my_numbers
