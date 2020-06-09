@@ -24,3 +24,21 @@ FROM Friends
 GROUP BY activity ) tablea
 WHERE ac not in (max_num, min_num)
 ```
+### Solution3: use ```having```
+```
+select activity
+from friends
+group by activity
+having count(id) not in
+(select max(cnt) as cnt
+from
+(select activity, count(id) as cnt
+from friends
+group by activity) tmp1
+union
+select min(cnt) as cnt 
+from
+(select activity, count(id) as cnt
+from friends
+group by activity) tmp2)
+```
