@@ -1,6 +1,31 @@
 # Shortest distance
 ## Question1: Shortest Distance in a Line
 https://leetcode.com/problems/shortest-distance-in-a-line/
+Table point holds the x coordinate of some points on x-axis in a plane, which are all integers.
+ 
+
+Write a query to find the shortest distance between two points in these points.
+ 
+
+| x   |
+|-----|
+| -1  |
+| 0   |
+| 2   |
+ 
+
+The shortest distance is '1' obviously, which is from point '-1' to '0'. So the output is as below:
+ 
+
+| shortest|
+|---------|
+| 1       |
+ 
+
+Note: Every point is unique, which means there is no duplicates in table point.
+ 
+
+Follow-up: What if all these points have an id and are arranged from the left most to the right most of x axis?
 ### Solution
 ```
 select min(p1.x - p2.x) shortest
@@ -10,6 +35,29 @@ join point p2 on p1.x > p2.x
 Use  ```p1.x > p2.x``` rather than ```p1.x <> p2.x``` to exlude the repeated points like (0,-1) and (-1,0) when calculating the distance.
 ## Question2: Shortest Distance in a Plane
 https://leetcode.com/problems/shortest-distance-in-a-plane/
+Table point_2d holds the coordinates (x,y) of some unique points (more than two) in a plane.
+ 
+
+Write a query to find the shortest distance between these points rounded to 2 decimals.
+ 
+
+| x  | y  |
+|----|----|
+| -1 | -1 |
+| 0  | 0  |
+| -1 | -2 |
+ 
+
+The shortest distance is 1.00 from point (-1,-1) to (-1,2). So the output should be:
+ 
+
+| shortest |
+|----------|
+| 1.00     |
+ 
+
+Note: The longest distance among all the points are less than 10000.
+ 
 ### Solution1: use ```Inner Join```
 ```
 SELECT ROUND(SQRT(MIN((POW(p1.x - p2.x, 2) + POW(p1.y - p2.y, 2)))), 2) AS shortest
