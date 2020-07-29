@@ -1,6 +1,22 @@
 # 4 Ways to find the nth highest salary
 ## Question
 https://leetcode.com/problems/nth-highest-salary/
+Write a SQL query to get the nth highest salary from the Employee table.
+
++----+--------+
+| Id | Salary |
++----+--------+
+| 1  | 100    |
+| 2  | 200    |
+| 3  | 300    |
++----+--------+
+For example, given the above Employee table, the nth highest salary where n = 2 is 200. If there is no nth highest salary, then the query should return null.
+
++------------------------+
+| getNthHighestSalary(2) |
++------------------------+
+| 200                    |
++------------------------+
 ## 1. Using correlated subquery
 One of the most common ways to solve this problem of finding the Nth maximum salary from Employee table is by using the correlated subquery. This is a special type of subquery where the subquery depends upon the main query and execute for every row returned by the main query.  It's slow but it can solve problems which are difficult to solve otherwise. Let's see the SQL query to find the Nth highest salary using the Correlated subquery.
 ### Solution1
